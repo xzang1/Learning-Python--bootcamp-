@@ -12,14 +12,16 @@ trial=6
 while trial>0:
     input_number=input(">>>")
     if input_number.isdigit():
-        if int(input_number)<random_number:
+        if int(input_number)<random_number and int(input_number)<1000 and int(input_number)>0:
             trial-=1
-            print("your number is too low","you have %d times left"%trial)
-        elif int(input_number)>random_number:
+            print("your number is too low",", and you have %d times left"%trial)
+        elif int(input_number)>random_number and int(input_number)<1000 and int(input_number)>0:
             trial-=1
-            print("too high","you have %d times left"%trial)
+            print("your number is too high",", and you have %d times left"%trial)
+        elif int(input_number)>1000 or int(input_number)<0:
+            print("Please enter a number within the range of 0 to 1000")
         else:
-            print("Good job ",input_name," !")
+            print("Good job ",input_name," ! You did it!")
             break
     else:
         print("You broke the game!")
